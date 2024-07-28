@@ -84,11 +84,13 @@ export default function ListScreen({navigation}: Props) {
       <FlatList
         data={items}
         renderItem={({item}) => (
+        <View style={styles.item}>
           <ListItem 
             item={item}
-            onEdit={() => navigation.navigate('EditItem', {item, editItem})}
+            onEdit={() => navigation.navigate('EditItem', { item, editItem })}
             onDelete={() => deleteItem(item.id)}
           />
+        </View>
         )}
         keyExtractor={item => item.id}
       />
@@ -99,7 +101,7 @@ export default function ListScreen({navigation}: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#a8abbd',
     margin: 10,
     borderCurve: 'circular' 
   },
@@ -110,5 +112,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#007AFF',
-  }
+  },
+    item: {
+    padding: 10,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor: '#ad9e72',
+    borderRadius: 5,
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
+  },
 });

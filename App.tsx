@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Screen
           name="List"
           component={ListScreen}
-          options={{title: 'Items List'}}
+          options={{title: 'To Do List'}}
         />
         <Stack.Screen
           name="AddItem"
